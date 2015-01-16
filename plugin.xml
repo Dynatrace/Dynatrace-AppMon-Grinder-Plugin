@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!-- plugin.xml file written by dynaTrace Client 4.1.0 -->
+<plugin>
+  <extension point="com.dynatrace.diagnostics.pdk.pluginconfig" id="org.measuredprogress.dynatrace.plugin.monitor.GrinderPlugin" name="Grinder Plugin">
+    <information>
+      <category value="" />
+      <description value="A plugin to query the REST APIs of grinder to get exection time statistics" />
+      <supportlevel value="unsupported" />
+    </information>
+    <configuration>
+      <property key="grinder.host.url" label="Grinder Host" type="url" description="The host which the grinder console is running" default="http://localhost:6373" />
+      <property key="grinder.recording.data" label="Grinder Recording Data Path" type="string" description="The path (URI) to query the grinder console for the latest set of cumulative statistics" default="recording/data" />
+    </configuration>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitor" id="org.measuredprogress.dynatrace.plugin.monitor.GrinderPlugin.monitor" name="Grinder Recording Data">
+    <plugin configid="org.measuredprogress.dynatrace.plugin.monitor.GrinderPlugin" class="org.measuredprogress.dynatrace.plugin.monitor.grinder.RecordingData" />
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="org.measuredprogress.dynatrace.plugin.monitor.GrinderPlugin.metricgroup1" name="GrinderData">
+    <metricgroup monitorid="org.measuredprogress.dynatrace.plugin.monitor.GrinderPlugin.monitor">
+      <metric defaultrate="purepath" name="TotalResponseTime" unit="ms" description="The total response time for on going test." />
+      <metric defaultrate="purepath" name="TestsExecuted" unit="number" description="The total number of tests executed" />
+      <metric defaultrate="purepath" name="ErrorCount" unit="number" description="The number of errors" />
+      <metric defaultrate="purepath" name="TotalStandardDeviation" unit="number" description="The standard deviation" />
+      <metric defaultrate="purepath" name="TotalTPS" unit="number" description="Total tests (yes tests) per second" />
+      <metric defaultrate="purepath" name="TotalPeakTPS" unit="number" description="The peak number of Tests (yes, tests) per second." />
+    </metricgroup>
+  </extension>
+</plugin>
+

@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Require-Bundle: com.dynatrace.diagnostics.sdk
+Bundle-Vendor: Measured Progress
+Bundle-ClassPath: .,lib/commons-logging-1.1.1.jar,lib/fluent-hc-4.2.1.
+ jar,lib/httpclient-4.2.1.jar,lib/httpcore-4.2.1.jar,lib/json-20080701
+ .jar
+Bundle-Version: 1.0.0
+Bundle-Name: Grinder Plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.measuredprogress.dynatrace.plugin.monitor.Gri
+ nderPlugin;singleton:=true
+
