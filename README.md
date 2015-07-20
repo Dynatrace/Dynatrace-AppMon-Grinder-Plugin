@@ -12,4 +12,4 @@ The plugin uses Grinder's REST Interface to query the following metrics:
 5. Total TPS
 6. Total Peak TPS
 
-Find further information in the [dynaTrace community](https://community.compuwareapm.com/community/display/DL/Grinder+Plugin).
+Find further information in the [dynaTrace community](https://community.dynatrace.com/community/display/DL/Grinder+Plugin).
